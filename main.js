@@ -28,11 +28,30 @@ class MySingleLinkedList {
     this.length++;
     return this;
   }
+  insert(index, value) {
+    if (index >= this.length) return this.append(value);
+    if (index === 0) return this.prepend(value);
+
+    const newNode = new Node(value);
+    let currentNode = this.getTheIndex(index - 1);
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
+    return this;
+  }
+  getTheIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
 }
 
 let myLinkedList = new MySingleLinkedList();
 myLinkedList.append("Hola");
 myLinkedList.append("Mundo");
 myLinkedList.append("!");
-myLinkedList.prepend(":3");
+myLinkedList.insert(0, "Pablo");
 console.log(myLinkedList.head);
