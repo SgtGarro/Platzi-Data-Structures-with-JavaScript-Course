@@ -31,17 +31,30 @@ class MyArray {
     delete this.data[this.length - 1];
     this.length++;
   }
+
+  unshift(item) {
+    if (!item) return this.length;
+    for (let i = this.length; i > 0; i--) this.data[i] = this.data[i - 1];
+    this.data[0] = item;
+    this.length++;
+    return this.length;
+  }
 }
 const myArray = new MyArray();
+// myArray.push("Jose");
+// myArray.push("Ana");
+// console.log(myArray.get(0));
+// const lastItem = myArray.pop();
+// console.log("POP", lastItem);
+// console.log(myArray.data);
+// myArray.push("Ana");
+// myArray.push("Oscar");
+// console.log(myArray.data);
+// const deletedItem = myArray.delete(1);
+// console.log("Deleted:", myArray.data);
+// console.log("Item deleted:", deletedItem);
 myArray.push("Jose");
 myArray.push("Ana");
-console.log(myArray.get(0));
-const lastItem = myArray.pop();
-console.log("POP", lastItem);
-console.log(myArray.data);
-myArray.push("Ana");
-myArray.push("Oscar");
-console.log(myArray.data);
-const deletedItem = myArray.delete(1);
-console.log("Deleted:", myArray.data);
-console.log("Item deleted:", deletedItem);
+console.log("Normal array", myArray.data);
+myArray.unshift("Oscar");
+console.log("Unshifted array", myArray.data);
