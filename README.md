@@ -23,5 +23,6 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 1. Building my DoblyLinkedList & implementing methods from SingleLinkedList
 
 ### Stacks
-1. Building my Stacks & implementing methods
+1. Building my Stack & implementing methods
 2. Method "push"
+3. Method "pop"
