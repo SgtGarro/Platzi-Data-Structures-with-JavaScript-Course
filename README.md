@@ -18,3 +18,6 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 2. Method "append" & "prepend"
 3. Method "insert"
 4. Method "shift" & "remove"
+
+### Double Linked List
+1. Building my DoblyLinkedList & implementing methods from SingleLinkedList
