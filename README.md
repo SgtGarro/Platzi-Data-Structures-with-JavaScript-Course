@@ -17,3 +17,4 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 1. Building my SingleLinkedList & implementing methods
 2. Method "append" & "prepend"
 3. Method "insert"
+4. Method "shift" & "remove"

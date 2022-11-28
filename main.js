@@ -36,6 +36,7 @@ class MySingleLinkedList {
     let currentNode = this.getTheIndex(index - 1);
     newNode.next = currentNode.next;
     currentNode.next = newNode;
+    this.length++;
     return this;
   }
   getTheIndex(index) {
@@ -47,6 +48,27 @@ class MySingleLinkedList {
     }
     return currentNode;
   }
+  shift() {
+    if (this.length !== 0) {
+      this.head = this.head.next;
+      this.length--;
+    }
+    return this;
+  }
+  remove(index) {
+    if (index >= this.length) console.error("Index out of range");
+    else {
+      if (index === 0) this.head = this.head.next;
+      else {
+        let currentNode = this.getTheIndex(index - 1);
+        let deletedNode = currentNode.next;
+        currentNode.next = deletedNode.next;
+        deletedNode.next = null;
+      }
+      this.length--;
+    }
+    return this;
+  }
 }
 
 let myLinkedList = new MySingleLinkedList();
@@ -54,4 +76,6 @@ myLinkedList.append("Hola");
 myLinkedList.append("Mundo");
 myLinkedList.append("!");
 myLinkedList.insert(0, "Pablo");
+console.log(myLinkedList.head);
+myLinkedList.remove(10);
 console.log(myLinkedList.head);
