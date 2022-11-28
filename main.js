@@ -23,6 +23,21 @@ class HashTable {
     }
     return undefined;
   }
+
+  delete(key) {
+    const address = this.hashMethod(key);
+    const currentBucket = this.data[address];
+    if (currentBucket) {
+      for (let i = 0; i < currentBucket.length; i++) {
+        if (currentBucket[i][0] === key) {
+          const item = currentBucket[i];
+          currentBucket.splice(i, 1);
+          return item;
+        }
+      }
+    }
+    return undefined;
+  }
 }
 
 const myHashTable = new HashTable(50);
@@ -35,3 +50,7 @@ let person = myHashTable.get("Mariana");
 console.log("Mariana", person);
 person = myHashTable.get("Diego");
 console.log("Diego", person);
+
+const itemDeleted = myHashTable.delete("Diego");
+console.log(myHashTable.data);
+console.log("Item deleted", itemDeleted);
