@@ -26,3 +26,4 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 1. Building my Stack & implementing methods
 2. Method "push"
 3. Method "pop"
+4. Method "peek"

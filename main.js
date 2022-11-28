@@ -9,7 +9,12 @@ class MyStack {
     this.top = this.bottom = null;
     this.length = 0;
   }
-  peek() {}
+  peek() {
+    const item = this.top;
+    this.pop();
+    item.next = null;
+    return item;
+  }
   pop() {
     if (this.length !== 0) {
       if (this.top == this.bottom) this.top = this.bottom = null;
@@ -34,4 +39,8 @@ myStack.push("Hola");
 myStack.push("Mundo");
 console.log(myStack.top);
 myStack.pop();
+myStack.push("Mundo");
 console.log(myStack.top);
+const lastItem = myStack.peek();
+console.log("Stack", myStack.top);
+console.log("Last item peeked", lastItem);
