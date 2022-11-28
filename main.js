@@ -20,9 +20,15 @@ class MyQueue {
   }
   dequeue() {
     if (this.length !== 0) this.first = this.first.next;
+    this.length--;
     return this;
   }
-  peek() {}
+  peek() {
+    const peekedItem = this.first;
+    this.dequeue();
+    peekedItem.next = null;
+    return peekedItem;
+  }
 }
 let myQueue = new MyQueue();
 myQueue.enqueue("Hola");
@@ -30,3 +36,7 @@ myQueue.enqueue("Mundo");
 console.log("Enqueue", myQueue.first);
 myQueue.dequeue();
 console.log("Dequeue", myQueue.first);
+myQueue.enqueue("Hola");
+const peekedItem = myQueue.peek();
+console.log("Peeked Item", peekedItem);
+console.log("Peek Queue", myQueue.first);
