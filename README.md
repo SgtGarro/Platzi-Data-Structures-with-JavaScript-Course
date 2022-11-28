@@ -9,3 +9,4 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 
 ### HashTable
 1. Building my HashTable & implementing methods
+2. Method "get"
