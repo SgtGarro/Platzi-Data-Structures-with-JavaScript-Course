@@ -30,4 +30,5 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 
 ### Queues
 1. Building my Queue & implementing methods
-2. Method "queue"
+2. Method "enqueue"
+3. Method "dequeue"
