@@ -23,7 +23,6 @@ class HashTable {
     }
     return undefined;
   }
-
   delete(key) {
     const address = this.hashMethod(key);
     const currentBucket = this.data[address];
@@ -37,6 +36,15 @@ class HashTable {
       }
     }
     return undefined;
+  }
+  getAllKeys() {
+    const keys = this.data
+      .filter((currentBucket) => {
+        return currentBucket != undefined;
+      })
+      .flat()
+      .map((item) => item[0]);
+    return keys;
   }
 }
 
@@ -54,3 +62,4 @@ console.log("Diego", person);
 const itemDeleted = myHashTable.delete("Diego");
 console.log(myHashTable.data);
 console.log("Item deleted", itemDeleted);
+console.log(myHashTable.getAllKeys());

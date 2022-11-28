@@ -11,3 +11,4 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 1. Building my HashTable & implementing methods
 2. Method "get"
 3. Method "delete"
+4. Method "getAllKeys"
