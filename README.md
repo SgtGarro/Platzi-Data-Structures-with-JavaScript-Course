@@ -21,3 +21,6 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 
 ### Double Linked List
 1. Building my DoblyLinkedList & implementing methods from SingleLinkedList
+
+### Stacks
+1. Building my Stacks & implementing methods
