@@ -24,3 +24,4 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 
 ### Stacks
 1. Building my Stacks & implementing methods
+2. Method "push"
