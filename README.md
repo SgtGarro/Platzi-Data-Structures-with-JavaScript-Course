@@ -33,3 +33,6 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 2. Method "enqueue"
 3. Method "dequeue"
 4. Method "peek"
+
+### Binary Tree
+1. Building my Binary Tree & implementing methods
