@@ -36,3 +36,6 @@ Lists, trees, graphs and more to create more efficient code with JavaScript.
 
 ### Binary Tree
 1. Building my Binary Tree & implementing methods
+
+### Graph
+1. Building my Graph

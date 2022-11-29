@@ -4,49 +4,34 @@ class Node {
     this.right = this.left = null;
   }
 }
-class BinaryTree {
+class Graph {
   constructor() {
-    this.root = null;
-    this.length = 0;
+    this.nodes = 0;
+    this.adjacentList = {};
   }
-  insert(value) {
-    const newNode = new Node(value);
-    if (this.root === null) this.root = newNode;
-    else {
-      let currentNode = this.root;
-      while (true) {
-        if (value < currentNode.value) {
-          if (!currentNode.left) {
-            currentNode.left = newNode;
-            return this;
-          } else currentNode = currentNode.left;
-        } else {
-          if (!currentNode.right) {
-            currentNode.right = newNode;
-            return this;
-          } else currentNode = currentNode.right;
-        }
-      }
-    }
-    this.length++;
-    return this;
+  addVertex(node) {
+    this.adjacentList[node] = [];
+    this.nodes++;
   }
-  search(value, currentNode = this.root) {
-    if (!currentNode) return false;
-    if (value < currentNode.value) {
-      return this.search(value, currentNode.left);
-    } else if (value > currentNode.value) {
-      return this.search(value, currentNode.right);
-    } else return true;
+  addEdge(node1, node2) {
+    this.adjacentList[node1].push(node2);
+    this.adjacentList[node2].push(node1);
   }
 }
 
-const myTree = new BinaryTree();
-myTree.insert(10);
-myTree.insert(4);
-myTree.insert(20);
-myTree.insert(2);
-myTree.insert(17);
-console.log("Root", myTree.root);
-console.log("'2' Founded?", myTree.search(2));
-console.log("'17' Founded?", myTree.search(17));
+const myGraph = new Graph();
+myGraph.addVertex(1);
+myGraph.addVertex(3);
+myGraph.addVertex(4);
+myGraph.addVertex(5);
+myGraph.addVertex(6);
+myGraph.addVertex(8);
+
+myGraph.addEdge(8, 4);
+myGraph.addEdge(4, 1);
+myGraph.addEdge(1, 3);
+myGraph.addEdge(1, 6);
+myGraph.addEdge(3, 6);
+myGraph.addEdge(3, 5);
+myGraph.addEdge(5, 4);
+console.log(myGraph);
